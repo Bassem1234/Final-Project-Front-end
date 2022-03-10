@@ -66,7 +66,7 @@ const routes: Routes = [
   {path:'event-detail', component: EventDetailsComponent},
   {path:'my-account', component: AccountComponent, canActivate:[UserGuard]},
   {path: 'search-result', component: SearchComponent},
-  {path: 'dashboard', component: DashboardComponent}
+  {path: 'dashboard', component: DashboardComponent, canActivate:[UserGuard]}
 ];
 
 @NgModule({
