@@ -1,0 +1,68 @@
+<app-header></app-header>
+
+<section class="about-area about-area-v1 pt-120 pb-120" id="about" style="padding-top: 60mm; background-color: rgb(233, 233, 245);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ovent-img">
+                    <img src="http://localhost:4000/upload/{{Event?.picture}}" class="img-fluid" alt="" style="width: 100%;">
+                </div>
+            </div>
+            <div class="col-lg-6" style="margin-top: 15mm;">
+                <div class="ovent-content-box">
+                    <div class="section-title section-title-1">
+                        <span class="span">{{Event?.category}}</span>
+                        <h2>{{Event?.eventName}}</h2>
+                        <h3>{{Event?.title}}</h3>
+                    </div>
+                    <h4>{{Event?.description}}</h4>
+                        <div class="ovent-content-box">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="box box-1">
+                                        <i class="fal fa-map-marker-alt"></i>
+                                        <h4>Where Is It?</h4>
+                                        <p>{{Event?.adress}}</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="box box-2">
+                                        <i class="fal fa-clock"></i>
+                                        <h4>When It’s Start?</h4>
+                                        <p>{{Event?.startDate | date : 'medium'}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <ul>
+                    <li><a class="main-btn" (click)="addToBasket()"><i class="fal fa-shopping-cart"></i> Add To Basket</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="events-area pt-40" *ngIf="Event?.sevDays">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title section-title-1 text-center">
+                    <h2>Schedule! </h2>
+                </div>
+            </div>
+        </div>
+        <app-filterevent></app-filterevent>
+    </div>
+</section>
+<section class="ovent-map">
+    <div class="map-box">
+        <iframe title="map" id="gmap_canvas" [src]="map"></iframe>
+        <div class="marker">
+            <!-- <img src="{{marker}}" alt=""> -->
+            <!-- <i class="fas fa-thumbtack" style="color: red; font-size: 7mm;"></i> -->
+        </div>
+    </div>
+</section>
+
+<app-footertwo></app-footertwo>

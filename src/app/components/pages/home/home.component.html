@@ -1,0 +1,233 @@
+<app-header></app-header>
+<!--====== BANNER PART START ======-->
+<section class="banner-area banner-area-v1 bg_cover" style="background-image: url('assets/images/back1.jpg'); ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner-content text-center">
+                    <span>Make some noise with us</span>
+                    <h1>Ditital DC Conference 2020</h1>
+                    <ul>
+                        <li><a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a></li>
+                        <li><a class="main-btn main-btn-2" routerLink="/"><i class="fal fa-angle-right"></i> Learn
+                                More</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-btn">
+        <a href="#" class="page_scroll"><img src="{{pagescroll}}" alt=""></a>
+    </div>
+    <!-- <div class="banner-shape">
+        <img src="{{bannershape}}" alt="">
+    </div> -->
+    <div class="banner-location">
+        <i class="fal fa-map-marker-alt"></i>
+        <div class="item">
+            <span>Venue</span>
+            <p>New York, US <br> Hall Of Fame, 23/DC</p>
+        </div>
+    </div>
+</section>
+<!--====== BANNER PART ENDS ======-->
+<!--====== ABOUT PART START ======-->
+<section class="about-area about-area-v1 pt-120 pb-120" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="ovent-img">
+                    <img src="{{aboutimg}}" class="img-fluid" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="ovent-content-box">
+                    <div class="section-title section-title-1">
+                        <span class="span">Best Professional Ovent 2019</span>
+                        <h2>DC Developer Meet Conference</h2>
+                    </div>
+                    <h4>The biggest largest widest anticipated Digital Web Conference.</h4>
+                    <p>Events must be memorable to make an impact. Of course the desired impact depends on your goals,
+                        but most companies want events to be more than just a staged advertisement for their brand.</p>
+                    <p>When done well, events have the power to create a lasting and powerful impression of all that
+                        your company can deliver. Events must be memorable to make an impact. Of course the desired
+                        impact depends on your goals, but most companies want.</p>
+                    <ul>
+                        <li><a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a></li>
+                        <li><a class="main-btn main-btn-2" routerLink="/"><i class="fal fa-angle-right"></i> Learn
+                                More</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== ABOUT PART ENDS ======-->
+<!--====== INTRO VIDEO PART START ======-->
+<section class="intro-video-area video-area-v1 bg_cover"
+    style="background-image: url({{videobg}});">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="ovent-content-box">
+                    <div class="section-title section-title-1">
+                        <span class="span">Intro Video</span>
+                        <h2>We Go With Our Quick Process</h2>
+                    </div>
+                    <h4>The biggest largest widest anticipated Digital Web Conference.</h4>
+                    <p>Events must be memorable to make an impact. Of course the desired impact depends on your goals,
+                        but most companies want events to be more than just a staged advertisement for their brand.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="intro-video-play">
+                    <a class="video-popup"
+                        href="https://www.youtube.com/watch?v=xzkkXOWz-mg&ab_channel=LesDunesElectroniques"><i
+                            class="fas fa-play"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== INTRO VIDEO PART ENDS ======-->
+<!--====== TEAM PART START ======-->
+<section class="team-area team-area-v1 bg_cover" style="background-image: url({{teambg}});">
+    <div class="team-sub">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let item of teamblock">
+                    <div class="team-sub-item text-center {{item.extclass}}">
+                        <div class="icon">
+                            <img src="{{item.icon}}" alt="">
+                        </div>
+                        <h3 class="title">{{item.title}}</h3>
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="team-main-item pt-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="section-title section-title-1 text-center">
+                        <span class="span">Speakers</span>
+                        <h2>The design of tall building is increasingly</h2>
+                    </div>
+                </div>
+            </div>
+            <app-speaker></app-speaker>
+        </div>
+    </div>
+</section>
+<!--====== TEAM PART ENDS ======-->
+<!--====== COUNTER PART START ======-->
+<section class="counter-area counter-area-1 bg_cover" style="background-image: url({{counterbg}});">
+    <div class="shape-box">
+        <img src="{{shape}}" class="shape-1" alt="">
+        <img src="{{shape}}" class="shape-2" alt="">
+    </div>
+    <div class="ovent-overlay"></div>
+    <div class="container">
+        <div class="counter-box">
+            <app-counter></app-counter>
+        </div>
+    </div>
+</section>
+<!--====== COUNTER PART ENDS ======-->
+<!--====== EVENTS PART START ======-->
+<section class="events-area pt-40">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="section-title section-title-1 text-center">
+                    <span class="span">Events</span>
+                    <h2>Dedicated to building Doom Schedule! </h2>
+                </div>
+            </div>
+        </div>
+        <app-filterevent></app-filterevent>
+    </div>
+</section>
+<!--====== EVENTS PART ENDS ======-->
+<!--====== GALLERY-BLOG PART START ======-->
+<section class="gallery-blog-area mb-120" id="gallery-blog">
+    <div class="container-fluid p-0">
+        <app-masonaryblog></app-masonaryblog>
+    </div>
+</section>
+<!--====== GALLERY-BLOG PART ENDS ======-->
+<!--====== SPONSORS PART START ======-->
+<section class="sponsors-area sponsors-area-1 pb-40">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section-title section-title-1 text-center mb-80">
+                    <span class="span">Sponsors</span>
+                    <h2>Our Sponsors</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <app-sponsers></app-sponsers>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== SPONSORS PART ENDS ======-->
+<!--====== CONTACT PART START ======-->
+<section class="contact-area contact-area-v1">
+    <div class="contact-wrapper">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="section-title section-title-1">
+                        <span class="span">Subscribe</span>
+                        <h2>Get Every Single Update Here.</h2>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form_group">
+                                        <input type="text" class="form_control" placeholder="Enter your name"
+                                            name="name" required>
+                                        <i class="fal fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form_group">
+                                        <input type="email" class="form_control" placeholder="Enter your Email"
+                                            name="email" required>
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form_group">
+                                        <input type="text" class="form_control" placeholder="Enter your NUmber"
+                                            name="number" required>
+                                        <i class="fal fa-phone"></i>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form_group">
+                                        <button class="main-btn"><i class="fal fa-envelope"></i>Submit Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="ovent-img">
+                        <img src="{{contactimg}}" class="img-fluid" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== CONTACT PART ENDS ======-->
+<app-footer></app-footer>

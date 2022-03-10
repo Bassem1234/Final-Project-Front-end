@@ -1,0 +1,67 @@
+<!-- Search From -->
+<div class="modal fade" id="search-modal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form>
+                <div class="form_group">
+                    <input type="text" class="form_control" placeholder="Search here...">
+                    <button class="search_btn"><i class="far fa-search"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<ng-template #mymodal let-modal>
+    <form>
+        <div class="form_group">
+            <input type="text" class="form_control" placeholder="Search here...">
+            <button class="search_btn"><i class="far fa-search"></i></button>
+        </div>
+    </form>
+</ng-template>
+<!-- Search From -->
+<!--====== HEADER PART START ======-->
+<header class="header-area header-area-v3">
+    <div class="header-navigation" id="sticky-header">
+        <div class="custom-container">
+            <div class="nav-container d-flex align-items-center justify-content-between"
+                [ngClass]="visible ? '' : 'breakpoint-on'" (window:resize)="detectHeader()">
+                <!-- site logo -->
+                <div class="brand_logo">
+                    <a routerLink="/"><img src="{{mainlogo}}" class="img-fluid main-logo" alt=""></a>
+                    <a routerLink="/"><img src="{{stickylogo}}" class="img-fluid sticky-logo" alt=""></a>
+                </div>
+                <div class="nav-menu" [ngClass]="opennav ? '' : 'menu-on'">
+                    <!-- Navbar Close Icon -->
+                    <div class="navbar-close" (click)="closenavBtn()">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+                    <!-- nav-menu -->
+                    <nav class="main-menu">
+                        <app-menu></app-menu>
+                    </nav>
+                    <div class="nav-pushed-item">
+                        <div class="navbar-btn">
+                            <a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navbar Toggler -->
+                <div class="menu-icon-box">
+                    <div class="search-icon">
+                        <a href="javascript:void(0)" (click)="open(mymodal)"><i class="far fa-search"></i></a>
+                    </div>
+                    <div class="navbar-toggler" [ngClass]="opennav ? '' : 'active'" (click)="opennavBtn()">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="nav-push-item" [ngClass]="visible ? '' : 'd-none'" (window:resize)="detectHeader()">
+                    <div class="navbar-btn">
+                        <a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!--====== HEADER PART ENDS ======-->

@@ -1,0 +1,22 @@
+<ul>
+    <li class="menu-item"><a routerLink="/">Home</a></li>
+    <li class="menu-item" style="margin-left: 2mm; margin-right: 2mm;"><a class="btn">Categories</a>
+        <ul class="sub-menu">
+            <li><a routerLink="/event-list">Festival</a></li>
+            <li><a routerLink="/event-list">Sport</a></li>
+            <li><a routerLink="/event-list">Concert</a></li>
+            <li><a routerLink="/event-list">Cinema</a></li>
+            <li><a routerLink="/event-list">Theatre</a></li>
+            <li><a routerLink="/event-list">Other</a></li>
+        </ul>
+    </li>
+    <li class="menu-item"><a routerLink="/event-list">Events</a>
+    </li>
+    <li class="menu-item">
+        <div class="form_group" [formGroup]="searchForm">
+            <input type="search" class="form_control" placeholder="search for an event"  style="height: 7mm; font-size: 3mm;" (keyup.enter)="searchEvent()" formControlName="search">
+            <i class="fal fa-search" style="margin-top: -5mm; margin-right: -5mm;" ></i>
+        </div>
+    </li>
+    <li class="menu-item"><a routerLink="/contact">Contact Us</a></li>
+</ul>

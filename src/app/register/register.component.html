@@ -1,0 +1,94 @@
+<app-headerpage></app-headerpage>
+<section class="contact-area-v2 bg_cover pt-120 pb-120"
+    style="background-image: url('assets/images/register.jpg'); padding-top: 65mm;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8 col-md-12">
+                <div class="contact-form">
+                    <form [formGroup]="registerForm">
+                        <div class="row form_group">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <input type="text" class="form_control" placeholder="Enter your first name*"
+                                    name="fName" required formControlName="fName"
+                                    [ngClass]="registerForm.get('fName').touched && registerForm.get('fName').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fal fa-user"></i>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <input type="text" class="form_control" placeholder="Enter your last name*" name="email"
+                                    formControlName="lName" required
+                                    [ngClass]="registerForm.get('lName').touched && registerForm.get('lName').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fal fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="row form_group">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <input type="tel" class="form_control" placeholder="Enter your Phone Number*"
+                                    formControlName="phone" name="phone" required
+                                    [ngClass]="registerForm.get('phone').touched && registerForm.get('phone').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fal fa-phone"></i>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                                <input type="email" class="form_control" placeholder="Enter your Email*" name="adress"
+                                    formControlName="email" required
+                                    [ngClass]="registerForm.get('email').touched && registerForm.get('email').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fal fa-envelope"></i>
+
+                            </div>
+                        </div>
+                        <div class="row form_group">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+
+                                <input [type]="!pass? 'password' : 'text'" class="form_control"
+                                    placeholder="Enter your password*" name="city" required formControlName="password"
+                                    [ngClass]="registerForm.get('password').touched && registerForm.get('password').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fas fa-eye btn" style="margin-top: -2.5mm; margin-right: -3mm;"
+                                    (click)="hidePass()" *ngIf="!pass"></i>
+                                <i class="fas fa-eye-slash btn" style="margin-top: -2.5mm; margin-right: -3mm;"
+                                    (click)="showPass()" *ngIf="pass"></i>
+
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <select class="form-control" style="border-radius: 0%; height: 18mm;"
+                                    formControlName="profile">
+                                    <option>Simple user</option>
+                                    <option>Event promoter</option>
+                                    <option>admin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form_group">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <input type="text" class="form_control" placeholder="Enter your adress*" name="adress"
+                                    formControlName="adress" required
+                                    [ngClass]="registerForm.get('adress').touched && registerForm.get('adress').invalid? 'form_control red' : 'form_Control green'">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <input class="form-control" type="number" style="border-radius: 0%; height: 18mm;"
+                                    placeholder="ZIP code" formControlName="zip"
+                                    [ngClass]="registerForm.get('zip').touched && registerForm.get('zip').invalid? 'form_control red' : 'form_Control green'">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <!-- <div class="form_button text-center">
+                                <button class="main-btn" (click)="register()" [disabled] = "!registerForm.touched || registerForm.invalid"
+                                ><i class="fal fa-arrow-right"></i>Register
+                                    Now</button>
+                            </div> -->
+                            <div class="form_button text-center">
+                                <button class="btn bt" (click)="register()" [disabled] = "!registerForm.touched || registerForm.invalid"
+                                ><span style="font-size: 4mm;"><i class="fal fa-arrow-right"></i> register</span></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footertwo></app-footertwo>

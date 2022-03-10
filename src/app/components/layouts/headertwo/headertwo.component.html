@@ -1,0 +1,37 @@
+<header class="header-area header-area-v2">
+    <div class="header-navigation" id="sticky-header">
+        <div class="container">
+            <div class="nav-container d-flex align-items-center justify-content-between" [ngClass]="visible ? '' : 'breakpoint-on'" (window:resize)="detectHeader()">
+                <!-- site logo -->
+                <div class="brand_logo">
+                    <a routerLink="/"><img src="assets/images/logo.png" class="img-fluid main-logo" alt=""></a>
+                    <a routerLink="/"><img src="{{stickylogo}}" class="img-fluid sticky-logo" alt=""></a>
+                </div>
+                <div class="nav-menu" [ngClass]="opennav ? '' : 'menu-on'">
+                    <!-- Navbar Close Icon -->
+                    <div class="navbar-close"  (click)="closenavBtn()">
+                        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                    </div>
+                    <!-- nav-menu -->
+                    <nav class="main-menu">
+                        <app-menu></app-menu>
+                    </nav>
+                    <div class="nav-pushed-item">
+                        <div class="navbar-btn">
+                            <a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-push-item" [ngClass]="visible ? '' : 'd-none'" (window:resize)="detectHeader()">
+                    <div class="navbar-btn">
+                        <a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a>
+                    </div>
+                </div>
+                <!-- Navbar Toggler -->
+                <div class="navbar-toggler" [ngClass]="opennav ? '' : 'active'" (click)="opennavBtn()">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

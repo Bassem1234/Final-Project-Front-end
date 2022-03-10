@@ -1,0 +1,146 @@
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+<!--====== Event-single-section PART START ======-->
+<section class="event-single-section pt-120 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="event-details-wrapper">
+                    <div class="event-img">
+                        <img src="{{eventimg}}" class="img-fluid" alt="">
+                    </div>
+                    <div class="event-info">
+                        <span>Design & Development</span>
+                        <h3>Pakura Hantai Conference 2019</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+                            ut perspiciatis unde omnis iste natus error. </p>
+                        <p>Sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                            inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                            dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+                            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                            tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let item of programlist">
+                                <div class="box">
+                                    <i class="fal fa-{{item.icon}}"></i>
+                                    <h6>{{item.title}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed
+                            ut perspiciatis unde omnis iste natus error. </p>
+                        <p>Sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+                            inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+                            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                            dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem
+                            ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                            tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ovent-sidebar event-sidebar">
+                    <div class="widget-box video-box mb-40">
+                        <div class="ovent-img">
+                            <img src="{{eventvideoposter}}" class="img-fluid" alt="">
+                            <div class="play-button">
+                                <a href="https://www.youtube.com/watch?v=cRXm1p-CNyk" class="video-popup"><i
+                                        class="far fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-box get-box bg_cover mb-40"
+                        style="background-image: url({{contactbg}});">
+                        <div class="ovent-overlay"></div>
+                        <div class="title">
+                            <span>get in touch</span>
+                            <h3>Have Any Query</h3>
+                            <p>Lorem ipsum dolor sit amet, consecte tur adipisicing elit, sed do.</p>
+                            <a routerLink="/contact" class="main-btn"><i class="fal fa-arrow-right"></i>Get A Quote</a>
+                        </div>
+                    </div>
+                    <div class="widget-box contact-box mb-40">
+                        <div class="title">
+                            <span>don’t find yet</span>
+                            <h3>Please Tell Here</h3>
+                        </div>
+                        <form>
+                            <div class="form_group">
+                                <input type="text" class="form_control" placeholder="Enter your name">
+                                <i class="fal fa-user"></i>
+                            </div>
+                            <div class="form_group">
+                                <input type="email" class="form_control" placeholder="Enter your email">
+                                <i class="fal fa-envelope"></i>
+                            </div>
+                            <div class="form_group">
+                                <input type="text" class="form_control" placeholder="Enter your subject/question">
+                                <i class="far fa-question"></i>
+                            </div>
+                            <div class="form_button">
+                                <button class="main-btn"><i class="fal fa-arrow-right"></i>Submit Now</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="widget-box about-box">
+                        <div class="title">
+                            <span>about</span>
+                            <h3>About Conference</h3>
+                            <p>Aliquam non est mattis, pellentesque diam placerat,blandit leo. Etiam posuere quis quam a
+                                ultricies ass.Praesent varius augue urna, ut scelerisque is with us augue lobortis eget.
+                            </p>
+                            <ul>
+                                <li><i class="fal fa-chair"></i>1200 Persons Seat</li>
+                                <li><i class="fal fa-coffee"></i>Drinks</li>
+                                <li><i class="fal fa-newspaper"></i>News</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== Event-single-section PART END ======-->
+<!--====== TEAM PART START ======-->
+<section class="team-area-v3 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title section-title-3 mb-40">
+                    <span class="span">angles</span>
+                    <h2>Our Speakers</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div id="arrows" class="mb-40">
+                    <div class="arrow prev"><i class="fal fa-angle-left"></i>Prev</div>
+                    <div class="arrow next">Next<i class="fal fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <ngx-slick-carousel class="team_slide" #slickModal="slick-carousel" [config]="teamConfig">
+            <div ngxSlickItem class="team-item" *ngFor="let item of speakersblock">
+                <div class="team-thumb">
+                    <img src="{{item.img}}" alt="team">
+                    <a routerLink="/"><i class="fas fa-plus"></i></a>
+                </div>
+                <div class="team-content text-center">
+                    <h3 class="title">{{item.name}}</h3>
+                    <span>{{item.post}}</span>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+    </div>
+</section>
+<!--====== TEAM PART END ======-->
+<app-footerthree></app-footerthree>

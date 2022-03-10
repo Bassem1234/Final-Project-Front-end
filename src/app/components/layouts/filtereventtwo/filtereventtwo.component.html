@@ -1,0 +1,62 @@
+<section class="events-area-v2 bg_cover pt-120 pb-80" style="background-image: url('assets/images/back2.jpg'); padding-top: 60mm;" id="event_filter_2">
+    <div class="ovent-overlay"></div>
+    <div class="shape-img">
+        <!-- <img src="{{shape4}}" class="img-1" alt="">
+        <img src="{{shape5}}" class="img-2" alt=""> -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title section-title-2 text-center mb-30">
+                    <span style="color: violet;">ENJOY</span>
+                    <h2>Our Events</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="event-filter text-center">
+                    <button class="event-btn active_btn" data-filter="all">All</button>
+                    <button class="event-btn" data-filter="Festival" id="fest">Festival</button>
+                    <button class="event-btn" data-filter="Sport" id="sport">Sport</button>
+                    <button class="event-btn" data-filter="Concert" id="concert">Concert</button>
+                    <button class="event-btn " data-filter="Cinema" id="cine">Cinema</button>
+                    <button class="event-btn" data-filter="Theatre" id="thea">Theatre</button>
+                    <button class="event-btn" data-filter="Other" id="other">Other</button>
+                </div>
+            </div>
+        </div>
+        <div class="filter_grid row">
+            <div class="col-lg-12 filter-item grid_column {{item.category}}" *ngFor="let item of events; let i = index">
+                <div class="event-item">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2">
+                            <div >
+                                <img src="http://localhost:4000/upload/{{item.picture}}" class="img-fluid" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="event-info">
+                                <div class="row">
+                                    <div class="col-lg-8" >
+                                        <h3><a (click)="goToEventDetails(i)" routerLink="/event-detail">{{item.eventName}}</a></h3>
+                                        <div class="post-meta">
+                                            <span class="tag"><i class="fal fa-tags"></i> 
+                                                <a >{{item.category}}</a></span>
+                                            <span class="user"><i class="fal fa-users"></i>
+                                                <a >{{item.authorFname}} {{item.authorLname}}</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a class="main-btn main-btn-2" (click)="addToBasket(i)"><i class="fal fa-shopping-cart"></i>Add to basket</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

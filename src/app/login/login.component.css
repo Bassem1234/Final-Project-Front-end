@@ -1,0 +1,20 @@
+.form_control {
+    height: 60px;
+    background: white;
+    border: 2px solid #d7edff;
+    margin-bottom: 0;
+}
+
+.bt{
+    width: 100%;
+    background-color:  rgb(83,199,204);
+    color: white;
+    height: 15mm;
+}
+.bt:hover{
+    width: 100%;
+    border: 1px solid rgb(83,199,204);
+    background-color: blue;
+    color: rgb(83,199,204);
+    height: 15mm;
+}

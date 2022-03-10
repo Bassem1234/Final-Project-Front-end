@@ -1,0 +1,438 @@
+<app-header></app-header>
+
+<section style="margin-top: 60mm; min-height: 200mm;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <!-- Nav Bar -->
+            <div class="col-lg-2" style=" padding-left: 8mm; padding-top: 3mm; position: fixed; margin-left: 20mm;">
+                <a [class]="details? 'btn selItem': 'btn unselItem'" (click)="dispDetails()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-info-circle"></i> Personal Info.</a>
+                <a [class]="prom? 'btn selItem': 'btn unselItem'" (click)="dispProm()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm;  text-align: left;">
+                    <i class="far fa-plus-circle"></i> Add promoter</a>
+                <a [class]="usr? 'btn selItem': 'btn unselItem'" (click)="dispUser()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-plus-circle"></i> Add user</a>
+                <a [class]="evt? 'btn selItem': 'btn unselItem'" (click)="dispEvent()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-plus-circle"></i> Add event</a>
+                <a [class]="stat? 'btn selItem': 'btn unselItem'" (click)="dispStat()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-chart-bar"></i> Statistics</a>
+                <a [class]="msg? 'btn selItem': 'btn unselItem'" (click)="dispMsg()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-comment"></i> Messages
+                    <span class="text-center" *ngIf="admin.newMsg !=0"
+                        style="font-size: 3mm;background-color: red;color: white; width: 3.5mm; border-radius: 100%; margin-left: 5mm;">{{admin.newMsg}}</span></a>
+                <a [class]="out? 'btn selItem': 'btn unselItem'" (click)="logOut()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
+                    <i class="fas fa-sign-out-alt"></i> Log Out</a>
+            </div>
+            <!-- statistics -->
+            <div class="col-lg-8" style="display: none;" id="stats">
+                <div class="row" style="height: 75mm; padding: 3mm;">
+                    <div class="col-lg-4">
+                        <div class="card" style="width: 20rem; border-radius: 10%; background-color:rgb(250, 244, 244)">
+                            <canvas id="event" width="400" height="300"
+                                style="border-radius: 10%; background-color: rgb(248, 166, 203);"></canvas>
+                            <div class="card-body">
+                                <h5 class="card-title">New Events</h5>
+                                <p class="card-text">New events added per month</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card" style="width: 20rem; border-radius: 10%; background-color:rgb(250, 244, 244)">
+                            <canvas id="user" width="400" height="300"
+                                style="border-radius: 10%; background-color: rgb(44, 43, 43);"></canvas>
+                            <div class="card-body">
+                                <h5 class="card-title">Users</h5>
+                                <p class="card-text">New users per month</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="card" style="width: 20rem; border-radius: 10%; background-color:rgb(250, 244, 244)">
+                            <canvas id="promoter" width="400" height="300"
+                                style="border-radius: 10%; border-bottom: 1px solid white; background-color: rgb(156, 240, 156);"></canvas>
+                            <div class="card-body">
+                                <h5 class="card-title">Promoters</h5>
+                                <p class="card-text">New promoters per month</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Popular Events -->
+                    <div class="col-lg-12"
+                        style="border-radius: 5%; background-color:rgb(250, 244, 244); padding-bottom: 7mm; margin-top: 10mm; margin-bottom: 10mm;">
+                        <div class="row" style="padding-top: 6mm; padding-left: 5mm;">
+                            <div class="col-5">
+                                <p>Most popular events</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row" style="margin-top: 5mm; padding-left: 5mm;">
+                            <div class="col-4">
+                                <p>Events</p>
+                            </div>
+                            <div class="col-2">
+                                <p>Participants</p>
+                            </div>
+                            <div class="col-2">
+                                <p>Revenues</p>
+                            </div>
+                            <div class="col-4">
+                                <p>Participation rate</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row" style="padding-left: 5mm;" *ngFor="let event of events">
+                            <div class="col-4">
+                                <p>{{event.eventName}}</p>
+                            </div>
+                            <div class="col-2">
+                                <p>{{event.participants}}</p>
+                            </div>
+                            <div class="col-2">
+                                {{event.participants * event.price}} TND
+                            </div>
+                            <div class="col-4">
+                                <ngb-progressbar class="green-progress" type="success"
+                                    [value]="event.participants / event.ticketAvailable * 100" [showValue]="true">
+                                </ngb-progressbar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Messages -->
+            <!-- if message box is empty -->
+            <div class="col-lg-8" style="padding: 7mm;" *ngIf="msg && admin.messages.length == 0">
+                <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
+                    <div class="col-4"></div>
+                    <div class="col-4">
+                        <p class="text-center">Your message box is empty</p>
+                    </div>
+                </div>
+            </div>
+            <!-- if message box is not empty -->
+            <div class="col-lg-8" style="padding: 7mm;" *ngIf="msg && admin.messages.length != 0">
+                <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
+                    <div class="card" style="margin-bottom: 4mm; width: 100%;"
+                        *ngFor="let msg of admin.messages.slice().reverse(); let i = index"
+                        [ngClass]="admin.newMsg  > i ? 'newMsg' : ''">
+                        <div class="card-header">
+                            From: <a href="#">{{msg.from}}</a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Message:</h5>
+                            <p class="card-text">{{msg.text}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Personal Info -->
+            <div class="col-lg-8" style="padding: 7mm;" *ngIf="!edit && details">
+                <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
+
+                    <div class="col-lg-11"></div>
+                    <div class="col-lg-1">
+                        <i class="far fa-edit btn" title="edit" (click)="editInfo()"></i>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <p style="font-size: 4mm;"><i class="fas fa-user" style="margin-right: 2mm;"></i>
+                            Name: {{admin.fName}} {{admin.lName}}</p>
+                        <p style="font-size: 4mm;"><i class="fas fa-envelope" style="margin-right: 2mm;"></i>
+                            Email: {{admin.email}}</p>
+                        <p style="font-size: 4mm;"><i class="fas fa-home" style="margin-right: 2mm;"></i>
+                            Adress: {{admin.adress}}</p>
+                        <p style="font-size: 4mm;"><i class="fas fa-phone" style="margin-right: 2mm;"></i>
+                            Tel: {{admin.phone}}</p>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Edit Admin Personal Info -->
+            <div class="col-lg-8" style="padding: 7mm;;" *ngIf="edit && details">
+                <div class="row"
+                    style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
+                    <div class="col-12">
+                        <form [formGroup]="detailForm">
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="First name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="fName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Last name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="lName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="tel" class="form-control" placeholder="Phone number"
+                                        formControlName="phone" style="font-size: 3.5mm;border-radius: 0%;">
+                                    <i class="fas fa-phone" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control" placeholder="Email"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="email">
+                                    <i class="fas fa-envelope" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group">
+                                <div class="col-6">
+                                    <input [type]="!pass? 'password' : 'text'" class="form-control"
+                                        placeholder="Password" style="font-size: 3.5mm;border-radius: 0%;"
+                                        formControlName="password">
+                                    <a class="btn">
+                                        <i class="fas fa-eye btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="hidePass()" *ngIf="!pass"></i>
+                                        <i class="fas fa-eye-slash btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="showPass()" *ngIf="pass"></i>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="adress"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="adress">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-5 col-md-12 text-center" style="margin-left: 4mm;">
+                                    <button id="up" class="btn" [disabled]="!detailForm.touched || detailForm.invalid"
+                                        (click)="saveInfoEdit()"
+                                        style="background-color: rgb(236,57,139); font-size: 3mm; border-radius: 0%;"><span
+                                            style="color: white;">Update</span></button>
+                                    <button id="dis" class="btn" (click)="dismissAdmin()"
+                                        style="background-color: white; border: 1px solid rgb(236,57,139); font-size: 3mm; border-radius: 0%; margin-left: 2mm;"><span
+                                            style="color: rgb(236,57,139);">Dismiss</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add a new User -->
+
+            <div class="col-lg-8" style="padding: 7mm;;" *ngIf="usr">
+                <div class="row"
+                    style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
+                    <div class="col-12">
+                        <form [formGroup]="userForm">
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="First name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="fName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Last name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="lName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="tel" class="form-control" placeholder="Phone number"
+                                        formControlName="phone" style="font-size: 3.5mm;border-radius: 0%;">
+                                    <i class="fas fa-phone" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control" placeholder="Email"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="email">
+                                    <i class="fas fa-envelope" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group">
+                                <div class="col-6">
+                                    <input [type]="!pass? 'password' : 'text'" class="form-control"
+                                        placeholder="Password" style="font-size: 3.5mm;border-radius: 0%;"
+                                        formControlName="password">
+                                    <a class="btn">
+                                        <i class="fas fa-eye btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="hidePass()" *ngIf="!pass"></i>
+                                        <i class="fas fa-eye-slash btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="showPass()" *ngIf="pass"></i>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="adress"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="adress">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-5 col-md-12 text-center" style="margin-left: 4mm;">
+                                    <button id="up" class="btn" [disabled]="!userForm.touched || userForm.invalid"
+                                        (click)="saveUser()"
+                                        style="background-color: rgb(236,57,139); font-size: 3mm; border-radius: 0%;"><span
+                                            style="color: white;">Add</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add a new Promoter -->
+            <div class="col-lg-8" style="padding: 7mm;;" *ngIf="prom">
+                <div class="row"
+                    style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
+                    <div class="col-12">
+                        <form [formGroup]="promoterForm">
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="First name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="fName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Last name"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="lName">
+                                    <i class="fas fa-user" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="tel" class="form-control" placeholder="Phone number"
+                                        formControlName="phone" style="font-size: 3.5mm;border-radius: 0%;">
+                                    <i class="fas fa-phone" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                                <div class="col-6">
+                                    <input type="email" class="form-control" placeholder="Email"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="email">
+                                    <i class="fas fa-envelope" style="margin-top: -6mm; margin-right: -4mm;"></i>
+                                </div>
+                            </div>
+                            <div class="row form_group">
+                                <div class="col-6">
+                                    <input [type]="!pass? 'password' : 'text'" class="form-control"
+                                        placeholder="Password" style="font-size: 3.5mm;border-radius: 0%;"
+                                        formControlName="password">
+                                    <a class="btn">
+                                        <i class="fas fa-eye btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="hidePass()" *ngIf="!pass"></i>
+                                        <i class="fas fa-eye-slash btn" style="margin-top: -7mm; margin-right: -7.75mm;"
+                                            (click)="showPass()" *ngIf="pass"></i>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="adress"
+                                        style="font-size: 3.5mm;border-radius: 0%;" formControlName="adress">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4"></div>
+                                <div class="col-lg-4 col-md-12 text-center" style="margin-left: 4mm;">
+                                    <button id="up" class="btn"
+                                        [disabled]="!promoterForm.touched || promoterForm.invalid"
+                                        (click)="savePromoter()"
+                                        style="background-color: rgb(236,57,139); font-size: 3mm; border-radius: 0%;"><span
+                                            style="color: white;">Add</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add an event  -->
+            <div class="col-lg-8" style="padding: 4mm;" *ngIf="evt">
+                <div class="row"
+                    style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
+                    <div class="col-12">
+                        <form [formGroup]="eventForm">
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Event name*"
+                                        formControlName="eventName" style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" class="form-control" placeholder="Title*" formControlName="title"
+                                        style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 3mm;">
+                                <div class="col-lg-12">
+                                    <textarea placeholder="Add a description here*" cols="30" rows="3"
+                                        formControlName="description" class="form-control"
+                                        style="font-size: 3.5mm; border-radius: 0%;"></textarea>
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="adress" class="form-control" placeholder="Adress"
+                                        formControlName="adress" style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                                <div class="col-6">
+                                    <input [type]="!schel? 'datetime-local' : 'date'" class="form-control"
+                                        formControlName="startDate" placeholder="Time"
+                                        style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="file" accept="image/*" class="form-control" name="file" id="file"
+                                        (change)="onChange($event)" style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-control" style="font-size: 3.5mm; border-radius: 0%;"
+                                        formControlName="category">
+                                        <option>Category</option>
+                                        <option>Festival</option>
+                                        <option>Sport</option>
+                                        <option>Concert</option>
+                                        <option>Cinema</option>
+                                        <option>Theatre</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form_group" style="margin-bottom: 3mm;">
+                                <div class="col-6">
+                                    <input type="number" class="form-control" placeholder="tickets available"
+                                        formControlName="ticketAvailable" style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" min="0.000" max="100000.000" step="0.100" class="form-control"
+                                        formControlName="price" placeholder="Price in TND (per ticket)*"
+                                        style="font-size: 3.5mm; border-radius: 0%;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <select class="form-control" style="font-size: 3.5mm; border-radius: 0%;"
+                                        formControlName="promoter">
+                                        <option>Promoter</option>
+                                        <option *ngFor="let prom of promoters">{{prom.fName}} {{prom.lName}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 4mm;">
+                                <div class="col-4"></div>
+                                <div class="col-4 text-center">
+                                    <button id="up" class="btn" [disabled]="!eventForm.touched || eventForm.invalid"
+                                        (click)="saveEvent()"
+                                        style="background-color: rgb(236,57,139); font-size: 3mm; border-radius: 0%;"><span
+                                            style="color: white;">Add</span></button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footertwo></app-footertwo>

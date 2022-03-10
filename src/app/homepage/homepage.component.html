@@ -1,0 +1,83 @@
+<app-headerpage></app-headerpage>
+<!--====== BANNER PART START ======-->
+<section class="banner-area-v2" style="background-image: url('assets/images/pageBack.png'); max-height: 100mm; padding-top: 100mm;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="banner-content">
+                    <span>JOIN US </span>
+                    <p style="font-size: 4mm; margin-left: 8mm;"><span style="color: #ec398b;">&</span></p>
+                    <h1>Enjoy Our Events</h1>
+                    <ul>
+                        <li><a class="main-btn" routerLink="/login"><i class="fas fa-sign-in-alt"></i> LOG IN</a></li>
+                        <li><a class="main-btn main-btn-2" routerLink="/register"><i class="fal fa-angle-right"></i> SIGN UP</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--====== Blog-area-v1 PART START ======-->
+<section class="blog-area-v1 pt-120 pb-120">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6">
+                <div class="section-title section-title-2 mb-45">
+                    <!-- <span class="span">07</span> -->
+                    <h2>Upcoming Events</h2>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div id="arrows">
+                    <div class="arrow prev"><i class="fal fa-angle-left"></i>Prev</div>
+                    <div class="arrow next">Next<i class="fal fa-angle-right"></i></div>
+                </div>
+            </div>
+        </div>
+        <ngx-slick-carousel class="blog_slide_v1" #slickModal="slick-carousel" [config]="blogConfig">
+            <div ngxSlickItem class="blog-item" *ngFor="let item of events">
+                <div class="blog-img">
+                    <img src="http://localhost:4000/upload/{{item.picture}}" class="img-fluid" alt="" style="height: 150px; width: 350px;">
+                </div>
+                <div class="blog-content" style="min-height: 60mm;">
+                    <h3><a routerLink="/blog-details">{{item.eventName}}</a></h3>
+                    <p>{{item.ttitle}}</p>
+                    <div class="post-meta">
+                        <span><i class="fal fa-calendar-alt"></i><a routerLink="/blog-details">{{item.startDate | date : 'medium'}}</a></span>
+                        <span><i class="fal fa-user"></i> By <a routerLink="/blog-details">{{item.authorFname}} {{item.authorLname}}</a></span>
+                    </div>
+                </div>
+            </div>
+        </ngx-slick-carousel>
+        <br>
+        <div class="col-lg-12">
+            <div class="form_button text-center">
+                <button class="main-btn" routerLink="/event-list">Event List</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="counter-area counter-area-3 bg_cover pt-120 pb-120"
+    style="background-image: url('assets/images/prometeur.jpg');">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="section-title section-title-3">
+                    <span class="span">CONCERT OR EVENTS PROMOTER ?</span>
+                    <h3>Sell and advertise your event
+                        today with millions of potential customers...</h3>
+                </div>
+            </div>
+            <div class="col-lg-12" style="margin-top: 10mm;">
+                <div class="form_button text-center">
+                    <button class="main-btn" (click)="Promote()">START</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<app-footertwo></app-footertwo>

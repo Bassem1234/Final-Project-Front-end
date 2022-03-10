@@ -1,0 +1,109 @@
+#up:hover{
+    background-color: white !important;
+    border: 1px solid rgb(236,57,139) !important;
+}
+
+#up:hover span{
+    color: rgb(236,57,139) !important;
+}
+
+#dis:hover{
+    background-color: rgb(236,57,139) !important;
+    border: 1px solid white !important;
+}
+
+#dis:hover span{
+    color: white !important;
+}
+#new:hover{
+    background-color: rgb(236,57,139);
+}
+#new:hover #word{
+    color: white;
+}
+#svEv{
+    background-color: rgb(236,57,139);
+    font-size: 3mm;
+    border-radius: 0%;
+}
+#svEv span{
+    color: white;
+}
+#svEv:hover{
+    background-color: transparent;
+    border: 1px solid rgb(236,57,139);
+}
+#svEv:hover span{
+    color: rgb(236,57,139);
+}
+#caEv{
+    background-color: transparent;
+    border: 1px solid rgb(236,57,139);
+    margin-left: 2mm;
+    font-size: 3mm;
+    border-radius: 0%;
+}
+#caEv span{
+    color: rgb(236,57,139) !important;
+}
+#caEv:hover{
+    background-color: rgb(236,57,139) ;
+}
+#caEv:hover span{
+    color: white !important;
+}
+.selbtn{
+    font-size: 3mm;
+    color: white; 
+  background-color: rgb(236,57,139); 
+  font-size: 3mm; 
+  /* height: 6mm;  */
+  border-radius: 0%;
+}
+.unselbtn{
+    font-size: 3mm; 
+    color: rgb(236,57,139);
+}
+
+.slick-slider {
+    width: 88%;
+    margin: auto;
+    background: rgb(14, 13, 13);
+  }
+  
+body .slick-prev, 
+body .slick-next {
+    height: 45px;
+    width: 40px;
+    background: grey !important;
+    z-index: 100;
+}
+.addDay{
+    font-size: 3mm;
+    border-radius: 0%;
+    background-color: rgb(255,246,246);
+    color: rgb(236,57,139);
+}
+.addDay:hover{
+    border: 1px solid rgb(236,57,139);
+}
+.unselItem{
+    font-size: 3.5mm; 
+    color: rgb(236,57,139); 
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}
+.selItem{
+    font-size: 3.5mm; 
+    color: white; 
+    background-color: rgb(236,57,139);
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}
+.unselItem:hover{
+    font-size: 3.5mm; 
+    color: white; 
+    background-color: rgb(236,57,139);
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}

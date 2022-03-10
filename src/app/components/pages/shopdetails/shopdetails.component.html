@@ -1,0 +1,174 @@
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+<!--====== Shop-details-section PART START ======-->
+<section class="shop-details-section pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <ngx-slick-carousel class="product-big-slide" #slickModal="slick-carousel" [config]="shopimgbigConfig">
+                    <div ngxSlickItem class="product-img" *ngFor="let item of shopimgbig">
+                        <img src="{{item.img}}" alt="">
+                    </div>
+                </ngx-slick-carousel>
+                <ngx-slick-carousel class="product-thumb-slide" #slickModal="slick-carousel" [config]="shopimgthumbConfig">
+                    <div ngxSlickItem class="product-img" *ngFor="let item of shopimgthumb">
+                        <img src="{{item.img}}" alt="">
+                    </div>
+                </ngx-slick-carousel>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-info">
+                    <ul class="rating">
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><i class="fas fa-star"></i></li>
+                        <li><span>23 Reviews</span></li>
+                    </ul>
+                    <div class="title">
+                        <span>accessories</span>
+                        <h3>Audio System Multiroom 360</h3>
+                    </div>
+                    <div class="price">
+                        <span class="offer-price">$460</span>
+                        <span class="main-price">$689</span>
+                    </div>
+                    <div class="row list-info">
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li><span>Brands:</span> </li>
+                                        <li><span>Product Code:</span></li>
+                                        <li><span>Rewards Points:</span></li>
+                                        <li><span>Stock:</span></li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-6">
+                                    <ul>
+                                        <li>Limonda Likaoli</li>
+                                        <li>Product Code:</li>
+                                        <li>Rewards Points:</li>
+                                        <li>Stock:</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discription">
+                        <h3>Overview</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Excepteur sint occaecat cupida...</p>
+                        <ul>
+                            <li>
+                                <div class="nice-number">
+                                    <button type="button" (click)="decrement()"><i class="far fa-minus"></i></button>
+                                        <input type="number" value="{{counter}}" >
+                                    <button type="button" (click)="increment()"><i class="far fa-plus"></i></button>
+                                </div>
+                            </li>
+                            <li><a routerLink="/"><i class="fas fa-heart"></i></a></li>
+                            <li><a routerLink="/"><i class="fas fa-hourglass"></i></a></li>
+                            <li><a routerLink="/"><i class="fas fa-share-square"></i></a></li>
+                        </ul>
+                        <a routerLink="/shop-details" class="main-btn">add to cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="discription-area mt-80">
+                    <div class="discription-tabs">
+                        <ul ngbNav #nav="ngbNav" class="nav nav-tabs">
+                            <li ngbNavItem class="nav-item">
+                                <a class="nav-link" ngbNavLink>Description</a>
+                                <ng-template ngbNavContent>
+                                    <div class="ovent-content-box">
+                                        <h3>Product Descriptions</h3>
+                                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                                        <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncove many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like) Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose injected humour and the like)..</p>
+                                    </div>
+                                </ng-template>
+                            </li>
+                            <li ngbNavItem class="nav-item">
+                                <a class="nav-link" ngbNavLink>Specifications</a>
+                                <ng-template ngbNavContent>
+                                    <div class="ovent-content-box">
+                                        <h3>Technical Specifications</h3>
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <tbody>
+                                                    <tr *ngFor="let item of specifications">
+                                                        <td class="name">{{item.title}}</td>
+                                                        <td>{{item.text}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </li>
+                            <li ngbNavItem class="nav-item">
+                                <a class="nav-link" ngbNavLink>Reviews (1)</a>
+                                <ng-template ngbNavContent>
+                                    <div class="shop-review-area">
+                                        <h4 class="title">1 Review for digital electronic speakers</h4>
+                                        <div class="review_user">
+                                            <img src="{{personone}}" alt="">
+                                            <ul class="rating">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                            <span><span>admin</span> – August 24, 2020</span>
+                                            <p>Donec rutrum congue leo eget malesuada. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </div>
+                                        <div class="review_form">
+                                            <form>
+                                                <div class="form_group">
+                                                    <label>Your Name *</label>
+                                                    <input type="text" class="form_control" placeholder="Name *">
+                                                </div>
+                                                <div class="form_group">
+                                                    <label>Your Email *</label>
+                                                    <input type="email" class="form_control" placeholder="Email *">
+                                                </div>
+                                                <div class="form_group">
+                                                    <label>Your review *</label>
+                                                    <textarea class="form_control" name="#" placeholder="Your review *"></textarea>
+                                                </div>
+                                                <div class="form_group">
+                                                    <span>Your review *</span>
+                                                    <ul class="rating">
+                                                        <li><a routerLink="/"><i class="fa fa-star"></i></a></li>
+                                                        <li><a routerLink="/"><i class="fa fa-star"></i></a></li>
+                                                        <li><a routerLink="/"><i class="fa fa-star"></i></a></li>
+                                                        <li><a routerLink="/"><i class="fa fa-star"></i></a></li>
+                                                        <li><a routerLink="/"><i class="fa fa-star"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="single_checkbox">
+                                                    <input type="checkbox" class="single_input" id="check1" name="check1">
+                                                    <label class="single_input_label sigle_input_check" for="check1"><span>Save my name, email, and website in this browser for the next time I comment.</span></label>
+                                                </div>
+                                                <div class="form_button">
+                                                    <button type="submit" class="main-btn">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </ng-template>
+                            </li>
+                        </ul>
+                    </div>
+                    <div [ngbNavOutlet]="nav"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== Shop-details-section PART END ======-->
+<app-footerthree></app-footerthree>

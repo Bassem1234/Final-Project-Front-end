@@ -1,0 +1,23 @@
+.unselItem{
+    font-size: 3.5mm; 
+    color: rgb(236,57,139); 
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}
+.selItem{
+    font-size: 3.5mm; 
+    color: white; 
+    background-color: rgb(236,57,139);
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}
+.unselItem:hover{
+    font-size: 3.5mm; 
+    color: white; 
+    background-color: rgb(236,57,139);
+    border-bottom: 1px solid rgb(236,57,139); 
+    border-radius: 0%;
+}
+.newMsg{
+    border: 2px solid rgb(180, 180, 34);
+}

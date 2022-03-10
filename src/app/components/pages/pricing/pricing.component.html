@@ -1,0 +1,107 @@
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+<!--====== Pricing-area-1 Start ======-->
+<section class="pricing-area-1 pt-120 pb-120 bg_cover" style="background-image: url({{pricingbg}});">
+    <div class="ovent-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title section-title-3 mb-70">
+                    <span class="span">our plan</span>
+                    <h2>Ticket Price</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="pricing-tab">
+                    <ul ngbNav #nav="ngbNav" class="nav nav-tabs">
+                        <li ngbNavItem class="nav-item">
+                            <a class="nav-link" ngbNavLink>Day event</a>
+                            <ng-template ngbNavContent>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of dailypricing">
+                                        <div class="pricing-box">
+                                            <div class="pricing-head">
+                                                <span class="span">{{item.title}}</span>
+                                                <h2><span>$</span>{{item.price}}</h2>
+                                                <ul>
+                                                    <li><i class="fal fa-coffee"></i><span>Coffee</span></li>
+                                                    <li><i class="fal fa-video"></i><span>Video</span></li>
+                                                    <li><i class="fal fa-box"></i><span>Gift</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="pricing-bottom">
+                                                <p>{{item.text}}</p>
+                                                <a routerLink="/" class="main-btn"><i class="fal fa-ticket-alt"></i>Buy
+                                                    Ticket</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </li>
+                        <li ngbNavItem class="nav-item">
+                            <a class="nav-link" ngbNavLink>Night event</a>
+                            <ng-template ngbNavContent>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let item of nightpricing">
+                                        <div class="pricing-box">
+                                            <div class="pricing-head">
+                                                <span class="span">{{item.title}}</span>
+                                                <h2><span>$</span>{{item.price}}</h2>
+                                                <ul>
+                                                    <li><i class="fal fa-coffee"></i><span>Coffee</span></li>
+                                                    <li><i class="fal fa-video"></i><span>Video</span></li>
+                                                    <li><i class="fal fa-box"></i><span>Gift</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="pricing-bottom">
+                                                <p>{{item.text}}</p>
+                                                <a routerLink="/" class="main-btn"><i class="fal fa-ticket-alt"></i>Buy
+                                                    Ticket</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div [ngbNavOutlet]="nav"></div>
+    </div>
+</section>
+<!--====== Pricing-area-1 End ======-->
+<!--====== Pricing-area-2 Start ======-->
+<section class="pricing-area-2 pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title section-title-3 text-center mb-80">
+                    <span class="span">plans 01</span>
+                    <h2>Our Plans</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let item of pricebox">
+                <div class="pricing-box box-{{item.id}}">
+                    <div class="pricing-head">
+                        <span class="span">{{item.title}}</span>
+                        <h2><span>$</span>{{item.price}}</h2>
+                        <h3 class="number">{{item.id}}</h3>
+                        <ul>
+                            <li><i class="fal fa-user-friends"></i><span>2 Person Seat</span></li>
+                            <li><i class="fal fa-coffee"></i><span>Coffe & Foods</span></li>
+                        </ul>
+                    </div>
+                    <div class="pricing-bottom">
+                        <a routerLink="/contact" class="main-btn"><i class="fal fa-ticket-alt"></i>Buy Ticket</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== Pricing-area-2 End ======-->
+<app-footerthree></app-footerthree>

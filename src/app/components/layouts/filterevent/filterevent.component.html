@@ -1,0 +1,53 @@
+<div class="events-filter d-flex flex-wrap justify-content-between">
+    <div class="events-btn active_btn" data-filter="cat-1">
+        <i class="fal fa-stars"></i>
+        <h5 class="title">First Day</h5>
+        <span>21th February 2014</span>
+    </div>
+    <div class="events-btn" data-filter="cat-2">
+        <i class="fal fa-stars"></i>
+        <h5 class="title">Second Day</h5>
+        <span>22th February 2014</span>
+    </div>
+    <div class="events-btn" data-filter="cat-3">
+        <i class="fal fa-stars"></i>
+        <h5 class="title">Third Day</h5>
+        <span>23th February 2014</span>
+    </div>
+    <div class="events-btn" data-filter="cat-4">
+        <i class="fal fa-stars"></i>
+        <h5 class="title">Fourth Day</h5>
+        <span>24th February 2014</span>
+    </div>
+</div>
+<div class="filter_grid mt-80">
+    <div class="events-item grid_column {{item.cat}}" *ngFor="let item of eventgridbox">
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="events-box item-4">
+                    <div class="date">
+                        <ul>
+                            <li><i class="far fa-map-marker-alt"></i> {{item.location}}</li>
+                            <li><i class="fal fa-clock"></i> {{item.time}}</li>
+                        </ul>
+                    </div>
+                    <h3 class="title">{{item.title}}</h3>
+                    <p>{{item.text}}</p>
+                    <div class="btns">
+                        <ul>
+                            <li><a class="main-btn" routerLink="/"><i class="fal fa-ticket"></i> Buy Ticket</a>
+                            </li>
+                            <li><a class="main-btn-2 main-btn" routerLink="/"><i class="fal fa-angle-right"></i>
+                                    Learn More</a></li>
+                        </ul>
+                    </div>
+                    <div class="events-thumb">
+                        <img src="{{item.videoposter}}" alt="">
+                        <a class="video-popup" href="https://www.youtube.com/watch?v=V3KZwohEjjc"><i
+                                class="fal fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

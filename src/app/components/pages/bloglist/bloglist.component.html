@@ -1,0 +1,196 @@
+<app-header></app-header>
+<app-breadcrumb></app-breadcrumb>
+<!--====== Blog-standard-section START ======-->
+<section class="blog-standard-section pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-item mb-40">
+                    <div class="blog-img">
+                        <img src="{{blogimg4}}" class="img-fluid" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                                tempor.</a></h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore.</p>
+                        <div class="post-bottom">
+                            <div class="author-thumb">
+                                <a routerLink="/blog-details"><img src="{{author}}" alt=""></a>
+                                <span>by <a routerLink="/blog-details">Hetmayar</a></span>
+                            </div>
+                            <div class="read-more">
+                                <a routerLink="/blog-details" class="btn-link"><i class="far fa-arrow-right"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item mb-40">
+                    <div class="blog-img">
+                        <img src="{{blogimg4}}" class="img-fluid" alt="">
+                        <div class="play-button">
+                            <a href="https://www.youtube.com/watch?v=cRXm1p-CNyk" class="video-popup"><i
+                                    class="far fa-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                                tempor.</a></h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore.</p>
+                        <div class="post-bottom">
+                            <div class="author-thumb">
+                                <a routerLink="/blog-details"><img src="{{author}}" alt=""></a>
+                                <span>by <a routerLink="/blog-details">Hetmayar</a></span>
+                            </div>
+                            <div class="read-more">
+                                <a routerLink="/blog-details" class="btn-link"><i class="far fa-arrow-right"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item mb-40">
+                    <div class="blog-img">
+                        <ngx-slick-carousel class="post-slide" #slickModal="slick-carousel" [config]="postslideConfig">
+                            <img ngxSlickItem src="{{item.img}}" class="img-fluid" alt="" *ngFor="let item of postslide">
+                        </ngx-slick-carousel>
+                    </div>
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                                tempor.</a></h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore.</p>
+                        <div class="post-bottom">
+                            <div class="author-thumb">
+                                <a routerLink="/blog-details"><img src="{{author}}" alt=""></a>
+                                <span>by <a routerLink="/blog-details">Hetmayar</a></span>
+                            </div>
+                            <div class="read-more">
+                                <a routerLink="/blog-details" class="btn-link"><i class="far fa-arrow-right"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item mb-40">
+                    <div class="blog-img">
+                        <iframe title="audio"
+                            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/301161123&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    </div>
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                                tempor.</a></h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore.</p>
+                        <div class="post-bottom">
+                            <div class="author-thumb">
+                                <a routerLink="/blog-details"><img src="{{author}}" alt=""></a>
+                                <span>by <a routerLink="/blog-details">Hetmayar</a></span>
+                            </div>
+                            <div class="read-more">
+                                <a routerLink="/blog-details" class="btn-link"><i class="far fa-arrow-right"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item mb-40">
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Lorem ipsum dolor sit amet, consecte cing elit, sed do eiusmod
+                                tempor.</a></h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore.</p>
+                        <div class="post-bottom">
+                            <div class="author-thumb">
+                                <a routerLink="/blog-details"><img src="{{author}}" alt=""></a>
+                                <span>by <a routerLink="/blog-details">Hetmayar</a></span>
+                            </div>
+                            <div class="read-more">
+                                <a routerLink="/blog-details" class="btn-link"><i class="far fa-arrow-right"></i>Read
+                                    more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item blog-quote-item bg_cover mb-40" style="background-image: url({{blogimg7}});">
+                    <div class="ovent-overlay"></div>
+                    <div class="quote-img">
+                        <img src="{{quote}}" alt="">
+                    </div>
+                    <div class="blog-content">
+                        <h3><a routerLink="/blog-details">Excepteur sint occaecat cupida tat non proident, sunt in.</a>
+                        </h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-item blog-bg-item bg_cover mb-40" style="background-image: url({{blogimg8}});">
+                    <div class="ovent-overlay"></div>
+                    <div class="blog-content">
+                        <a routerLink="/blog-details" class="cat">Businese</a>
+                        <h3><a routerLink="/blog-details">Excepteur sint occaecat cupida tat non proident, sunt in.</a>
+                        </h3>
+                        <ul class="post-meta">
+                            <li><i class="far fa-eye"></i>232 Views</li>
+                            <li><a routerLink="/blog-details"><i class="far fa-eye"></i>35 Comments</a></li>
+                            <li><i class="far fa-calendar-alt"></i>24th March 2019</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ovent-pagination text-center">
+                    <app-pagination></app-pagination>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <app-blogsidebar></app-blogsidebar>
+            </div>
+        </div>
+    </div>
+</section>
+<!--====== Blog-standard-section END ======-->
+<app-footerthree></app-footerthree>
