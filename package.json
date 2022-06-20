@@ -51,7 +51,6 @@
     "ngx-slick-carousel": "^0.5.1",
     "ngx-snackbar": "^2.0.1",
     "ngx-wow": "^2.0.1",
-    "node-sass": "^7.0.1",
     "path": "^0.12.7",
     "rxjs": "^6.6.3",
     "sanitizer": "^0.1.3",
