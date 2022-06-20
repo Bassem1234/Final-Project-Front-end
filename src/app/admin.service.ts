@@ -8,7 +8,8 @@ import { environment } from 'src/environments/environment';
 export class AdminService {
 
   constructor(private http: HttpClient) { }
-  baseURL: string = environment.baseURL;
+  //baseURL: string = environment.baseURL;
+  baseURL = 'http://localhost:4000';
   updateAdmin(id:any, data:any){
     return this.http.put(`${this.baseURL}/api/admins/${id}`, data, {
       headers: new HttpHeaders({

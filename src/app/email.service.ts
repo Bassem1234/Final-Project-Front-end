@@ -6,7 +6,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class EmailService {
-  baseURL: string = environment.baseURL;
+  //baseURL: string = environment.baseURL;
+  baseURL = 'http://localhost:4000';
   constructor(private http: HttpClient) { }
 
   sendEmail(data:any){

@@ -6,7 +6,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class PromoterService {
-  baseURL: string = environment.baseURL;
+  //baseURL: string = environment.baseURL;
+  baseURL = 'http://localhost:4000';
   constructor(private http : HttpClient) { }
   getPromoter(id:any){  
     return this.http.get(`${this.baseURL}/api/promoters/${id}`);
