@@ -7,7 +7,7 @@ import { BreadcrumbModule } from 'angular-crumbs';
 import { NgwWowModule } from 'ngx-wow';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { Ng5SliderModule } from 'ng5-slider';
-import { NgMasonryGridModule } from 'ng-masonry-grid';
+//import { NgMasonryGridModule } from 'ng-masonry-grid';
 import { NiceSelectModule } from "ng-nice-select";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -141,7 +141,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NgbModule,
     Ng5SliderModule,
     NiceSelectModule,
-    NgMasonryGridModule,
+    //NgMasonryGridModule,
     NgCircleProgressModule.forRoot({
       // set defaults here
       radius: 100,
