@@ -5,15 +5,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-//app.use(express.static('./dist/Angular-Template'));
-app.use(express.static(`${__dirname}/Angular-Template/dist/`));
+app.use(express.static('./dist/Angular-Template'));
 
-// app.get('/*', (req, res) =>
-//     res.sendFile('index.html', {root: 'dist/Angular-Template/'}),
-// );
-app.get('*', (req, res) => {
-    res.sendFile(`./Angular-Template/dist/index.html`); // load the single view file (angular will handle the page changes on the front-end)
-});
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/Angular-Template/'}),
+);
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 8080);
