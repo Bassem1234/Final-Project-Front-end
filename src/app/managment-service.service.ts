@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ManagmentServiceService {
-baseURL: string = environment.baseURL;
+//baseURL: string = environment.baseURL;
+baseURL = 'http://localhost:4000';
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userData: any){
