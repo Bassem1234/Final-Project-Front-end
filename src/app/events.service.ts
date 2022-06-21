@@ -7,7 +7,8 @@ import { environment } from 'src/environments/environment';
 })
 export class EventsService {
   //baseURL: string = environment.baseURL;
-  baseURL = 'http://localhost:4000';
+  //baseURL = 'http://localhost:4000';
+  baseURL = 'https://tseker-back.herokuapp.com';
   constructor(private http: HttpClient) { }
   getEvents(){  
     return this.http.get(`${this.baseURL}/api/events/`);
