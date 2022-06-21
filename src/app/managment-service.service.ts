@@ -13,7 +13,7 @@ baseURL = 'https://tseker-back.herokuapp.com';
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userData: any){
-    return this.http.post(`${this.baseURL}/api/promoters`, userData);
+    return this.http.post(`${this.baseURL}/api/login`, userData);
   }
   loggedIn(){
     return !!localStorage.getItem('token');
