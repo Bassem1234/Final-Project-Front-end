@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ManagmentServiceService {
 //baseURL: string = environment.baseURL;
-baseURL = 'http://tseker-back.herokuapp.com';
+baseURL = 'https://tseker-back.herokuapp.com';
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userData: any){
