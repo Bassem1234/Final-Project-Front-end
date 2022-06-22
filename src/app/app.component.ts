@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
     window.scroll(0,0);
   }
   private createTitle(routesCollection: Breadcrumb[]) {
-    const title = 'Ovent Angular';
+    const title = 'Tseker';
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }
