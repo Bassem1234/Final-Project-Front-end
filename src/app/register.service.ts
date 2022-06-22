@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class RegisterService {
-  //baseURL: string = environment.baseURL;
-  baseURL = 'http://localhost:4000';
+baseURL: string = environment.baseURL;
+
   constructor(private http: HttpClient) { }
   register(userData:any){
     return this.http.post(`${this.baseURL}/api/register`, userData);

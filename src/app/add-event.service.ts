@@ -6,8 +6,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class AddEventService {
-  //baseURL: string = environment.baseURL;
-  baseURL = 'http://localhost:4000';
+  baseURL: string = environment.baseURL;
+  
   constructor(private http: HttpClient) { }
   addEvent(data: any, id: any) {
     return this.http.put(`${this.baseURL}/api/promoters-event/${id}`, data, {
