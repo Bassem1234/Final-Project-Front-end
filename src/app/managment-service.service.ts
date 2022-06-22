@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ManagmentServiceService {
-//baseURL: string = environment.baseURL;
-baseURL = 'https://tseker-back.herokuapp.com';
+baseURL: string = environment.baseURL;
+
   constructor(private http: HttpClient, private router: Router) { }
 
   login(userData: any){
