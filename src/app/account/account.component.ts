@@ -320,7 +320,7 @@ export class AccountComponent implements OnInit {
     this.formData.append('price', this.eventForm.value.price);
     this.formData.append('schedule', JSON.stringify(this.days));
     this.formData.append('sevDays', this.eventForm.value.sevDays);
-    this.formData.append('picture', process.env.PICTURE_URL + this.picture.name);
+    this.formData.append('picture', 'https://tseker-back.herokuapp.com/upload/' + this.picture.name);
     this.formData.append('file', this.picture);
     this.addEventService.addEvent(this.formData, localStorage.getItem('userId')).subscribe((response: any) => {
       if(response.message == 'Event added successfully'){
