@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EventsService } from 'src/app/events.service';
+import { LoadingService } from 'src/app/loading.service';
 import { SimpleUserService } from 'src/app/simple-user.service';
 
 @Component({
@@ -15,7 +16,8 @@ pass = false;
 cpass = false;
 events:any;
 user: any;
-  constructor(private router: Router, private eventService: EventsService, private userService: SimpleUserService) {
+loading$ = this.loader.loading$;
+  constructor(private router: Router, private eventService: EventsService, private userService: SimpleUserService, public loader: LoadingService) {
     this.userService.getUser(localStorage.getItem('userId')).subscribe((response: any) => {
       if (response != null) {
         this.user = response;

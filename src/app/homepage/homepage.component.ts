@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EventsService } from '../events.service';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-homepage',
@@ -13,7 +14,8 @@ export class HomepageComponent implements OnInit {
   pass = false;
   cpass = false;
   events:any;
-  constructor(private router : Router, private eventService: EventsService) { }
+  loading$ = this.loader.loading$;
+  constructor(private router : Router, private eventService: EventsService, public loader: LoadingService) { }
 // Banner
 bannerbg = 'assets/images/banner-bg-2.jpg';
 shape2 = 'assets/images/shape/shape-2.png';
@@ -114,5 +116,8 @@ blogConfig = {
       }
       showcPass(){
         this.cpass = !this.cpass;
+      }
+      goToEventDetails(input: number) {
+        localStorage.setItem('eventId', JSON.stringify(input));
       }
 }
