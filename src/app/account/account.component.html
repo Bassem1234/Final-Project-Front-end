@@ -743,4 +743,11 @@
         </div>
     </div>
 </section>
+<div class="preloader" *ngIf="loading$ | async">
+    <div class="lds-ellipsis">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
 <app-footertwo></app-footertwo>

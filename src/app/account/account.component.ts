@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 import Swal from 'sweetalert2';
 import { AddEventService } from '../add-event.service';
 import { BookTicketService } from '../book-ticket.service';
+import { LoadingService } from '../loading.service';
 import { ManagmentServiceService } from '../managment-service.service';
 import { PromoterService } from '../promoter.service';
 import { SimpleUserService } from '../simple-user.service';
@@ -47,8 +48,9 @@ export class AccountComponent implements OnInit {
   }
   user: any;
   basket: any;
+  loading$ = this.loader.loading$;
   constructor(private simpleUserService: SimpleUserService, private bookTicketService: BookTicketService, private promoterService: PromoterService
-    , private addEventService: AddEventService, private router: Router, private loginService: ManagmentServiceService) {
+    , private addEventService: AddEventService, private router: Router, private loginService: ManagmentServiceService, public loader: LoadingService) {
     this.simpleUserService.getUser(localStorage.getItem('userId')).subscribe((response: any) => {
       if (response != null) {
         this.user = response;
