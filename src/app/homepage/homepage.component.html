@@ -38,7 +38,7 @@
         <ngx-slick-carousel class="blog_slide_v1" #slickModal="slick-carousel" [config]="blogConfig">
             <div ngxSlickItem class="blog-item" *ngFor="let item of events">
                 <div class="blog-img">
-                    <img src="https://tseker-back.herokuapp.com/upload/{{item.picture}}" class="img-fluid" alt="" style="height: 150px; width: 350px;">
+                    <img [src]="item.picture" class="img-fluid" alt="" style="height: 150px; width: 350px;">
                 </div>
                 <div class="blog-content" style="min-height: 60mm;">
                     <h3><a routerLink="/blog-details">{{item.eventName}}</a></h3>
