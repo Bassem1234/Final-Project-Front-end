@@ -1,4 +1,11 @@
 <app-header *ngIf="head"></app-header>
 <app-headerpage *ngIf="!head"></app-headerpage>
 <app-filtereventtwo></app-filtereventtwo> 
+<div class="preloader" *ngIf="loading$ | async">
+    <div class="lds-ellipsis">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
 <app-footertwo></app-footertwo>

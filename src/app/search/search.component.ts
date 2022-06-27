@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-search',
@@ -17,7 +18,8 @@ export class SearchComponent implements OnInit {
     { cat: 'cat6', img: 'assets/images/events/book.jpg', title: 'Foire National Du Livre Tunisien 2022', tag: 'Other', user: 'Rosalina D. Willamson' },
   ];
   showEvent: any = [];
-  constructor(private router: Router) { }
+  loading$ = this.loader.loading$;
+  constructor(private router: Router, public loader: LoadingService) { }
 
   ngOnInit(): void {
 

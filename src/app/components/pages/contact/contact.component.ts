@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/admin.service';
 import { EmailService } from 'src/app/email.service';
+import { LoadingService } from 'src/app/loading.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ import { EmailService } from 'src/app/email.service';
 })
 export class ContactComponent implements OnInit {
 id = '6227b736aeae7858531fb2ca';
-  constructor(private router: Router, private emailService: EmailService, private adminService: AdminService) { 
+loading$ = this.loader.loading$;
+  constructor(private router: Router, private emailService: EmailService, private adminService: AdminService, public loader: LoadingService) { 
     this.adminService.getAdminList().subscribe((response:any)=>{
       localStorage.setItem('adminId',response[response.length-1]._id);
     });

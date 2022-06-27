@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import * as $ from 'jquery';
 import Swal from 'sweetalert2';
 import { EventsService } from '../events.service';
+import { LoadingService } from '../loading.service';
 import { SimpleUserService } from '../simple-user.service';
 @Component({
   selector: 'app-event-details',
@@ -17,8 +18,9 @@ export class EventDetailsComponent implements OnInit {
   map:any;
   user:any;
   videobg = 'assets/images/test1.mp4';
+  loading$ = this.loader.loading$;
   constructor(private eventService: EventsService, public sanitizer: DomSanitizer, private userService: SimpleUserService, 
-    private router: Router) {
+    private router: Router, public loader: LoadingService) {
     this.userService.getUser(localStorage.getItem('userId')).subscribe((response: any) => {
       if (response != null) {
         this.user = response;
