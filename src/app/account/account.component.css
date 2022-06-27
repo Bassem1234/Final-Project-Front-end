@@ -1,9 +1,17 @@
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 819px) {
     #left-menu{
         display: none;
     }
     #left-menu2{
         display: block;
+    }
+  }
+  @media screen and (min-width: 820px) {
+    #left-menu{
+        display: block;
+    }
+    #left-menu2{
+        display: none;
     }
   }
 
