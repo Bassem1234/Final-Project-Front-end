@@ -69,6 +69,7 @@ import { RegisterComponent } from './register/register.component';
 import { InterceptorService } from './interceptor.service';
 import { UserGuard } from './user.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NetworkInterceptor } from './network.interceptor';
 
 
 @Injectable({
@@ -157,7 +158,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     NgbProgressbarModule
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}, UserGuard],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}, UserGuard,
+    {provide: HTTP_INTERCEPTORS, useClass: NetworkInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
