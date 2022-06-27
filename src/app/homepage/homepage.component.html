@@ -41,7 +41,7 @@
                     <img [src]="item.picture" class="img-fluid" alt="" style="height: 150px; width: 350px;">
                 </div>
                 <div class="blog-content" style="min-height: 60mm;">
-                    <h3><a routerLink="/blog-details">{{item.eventName}}</a></h3>
+                    <h3><a routerLink="/event-detail" (click)="goToEventDetails(i)">{{item.eventName}}</a></h3>
                     <p>{{item.ttitle}}</p>
                     <div class="post-meta">
                         <span><i class="fal fa-calendar-alt"></i><a routerLink="/event-detail" (click)="goToEventDetails(i)">{{item.startDate | date : 'medium'}}</a></span>
