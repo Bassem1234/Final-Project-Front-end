@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { LoadingService } from '../loading.service';
 import { ManagmentServiceService } from '../managment-service.service';
 
 
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   pass = 'password';
   loginForm: any;
   auth = '';
-  constructor(private managmentService: ManagmentServiceService, private router: Router) { }
+  loading$ = this.loader.loading$;
+  constructor(private managmentService: ManagmentServiceService, private router: Router, public loader: LoadingService) { }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
