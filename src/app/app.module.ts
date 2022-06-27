@@ -70,6 +70,7 @@ import { InterceptorService } from './interceptor.service';
 import { UserGuard } from './user.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NetworkInterceptor } from './network.interceptor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @Injectable({
@@ -159,7 +160,7 @@ import { NetworkInterceptor } from './network.interceptor';
     NgbProgressbarModule
   ],
   providers: [{provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}, UserGuard,
-    {provide: HTTP_INTERCEPTORS, useClass: NetworkInterceptor, multi: true}],
+    {provide: HTTP_INTERCEPTORS, useClass: NetworkInterceptor, multi: true}, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
