@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-3"></div>
             <!-- Nav Bar -->
-            <div class="col-lg-2" style=" padding-left: 8mm; padding-top: 3mm; position: fixed; margin-left: 20mm;">
+            <div class="col-lg-2" style=" padding-left: 8mm; padding-top: 3mm; margin-left: 20mm;" id="left-menu">
                 <a [class]="details? 'btn selItem': 'btn unselItem'" (click)="dispDetails()"
                     style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
                     <i class="far fa-info-circle"></i> Personal Info.</a>
@@ -30,6 +30,32 @@
                     style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
                     <i class="fas fa-sign-out-alt"></i> Log Out</a>
             </div>
+            <div class="col-2" style=" padding-left: 8mm; padding-top: 3mm; margin-left: 20mm;" id="left-menu2">
+                <a [class]="details? 'btn selItem': 'btn unselItem'" (click)="dispDetails()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-info-circle"></i></a>
+                <a [class]="prom? 'btn selItem': 'btn unselItem'" (click)="dispProm()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm;  text-align: left;">
+                    <i class="far fa-plus-circle"></i></a>
+                <a [class]="usr? 'btn selItem': 'btn unselItem'" (click)="dispUser()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-plus-circle"></i></a>
+                <a [class]="evt? 'btn selItem': 'btn unselItem'" (click)="dispEvent()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-plus-circle"></i></a>
+                <a [class]="stat? 'btn selItem': 'btn unselItem'" (click)="dispStat()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-chart-bar"></i></a>
+                <a [class]="msg? 'btn selItem': 'btn unselItem'" (click)="dispMsg()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%;font-size: 4.5mm; text-align: left;">
+                    <i class="far fa-comment"></i>
+                    <span class="text-center" *ngIf="admin.newMsg !=0"
+                        style="font-size: 3mm;background-color: red;color: white; width: 3.5mm; border-radius: 100%; margin-left: 5mm;">{{admin.newMsg}}</span></a>
+                <a [class]="out? 'btn selItem': 'btn unselItem'" (click)="logOut()"
+                    style="border-bottom: 0.25px solid rgb(68, 65, 65); width: 100%; border-radius: 0%; font-size: 4.5mm; text-align: left;">
+                    <i class="fas fa-sign-out-alt"></i></a>
+            </div>
+
             <!-- statistics -->
             <div class="col-lg-8" style="display: none;" id="stats">
                 <div class="row" style="height: 75mm; padding: 3mm;">

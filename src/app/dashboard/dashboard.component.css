@@ -21,3 +21,20 @@
 .newMsg{
     border: 2px solid rgb(180, 180, 34);
 }
+
+@media screen and (max-width: 819px) {
+    #left-menu{
+        display: none;
+    }
+    #left-menu2{
+        display: block;
+    }
+  }
+  @media screen and (min-width: 820px) {
+    #left-menu{
+        display: block;
+    }
+    #left-menu2{
+        display: none;
+    }
+  }
