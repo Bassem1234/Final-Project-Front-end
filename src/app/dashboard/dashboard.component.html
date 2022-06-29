@@ -57,7 +57,7 @@
             </div>
 
             <!-- statistics -->
-            <div class="col-lg-9 col-xs-10" style="display: none; overflow-y: scroll;" id="stats">
+            <div class="col-9" style="display: none; overflow-y: scroll;" id="stats">
                 <div class="row" style="height: 75mm; padding: 3mm;">
                     <div class="col-lg-4 col-xs-12">
                         <div class="card" style="width: 20rem; border-radius: 10%; background-color:rgb(250, 244, 244)">
@@ -136,7 +136,7 @@
             </div>
             <!-- Messages -->
             <!-- if message box is empty -->
-            <div class="col-10" style="padding: 7mm;" *ngIf="msg && admin.messages.length == 0">
+            <div class="col-9" style="padding: 7mm;" *ngIf="msg && admin.messages.length == 0">
                 <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
                     <div class="col-4"></div>
                     <div class="col-4">
@@ -145,7 +145,7 @@
                 </div>
             </div>
             <!-- if message box is not empty -->
-            <div class="col-10" style="padding: 7mm;" *ngIf="msg && admin.messages.length != 0">
+            <div class="col-9" style="padding: 7mm;" *ngIf="msg && admin.messages.length != 0">
                 <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
                     <div class="card" style="margin-bottom: 4mm; width: 100%;"
                         *ngFor="let msg of admin.messages.slice().reverse(); let i = index"
@@ -162,7 +162,7 @@
                 </div>
             </div>
             <!-- Personal Info -->
-            <div class="col-10" style="padding: 7mm;" *ngIf="!edit && details">
+            <div class="col-9" style="padding: 7mm;" *ngIf="!edit && details">
                 <div class="row" style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;">
 
                     <div class="col-11"></div>
@@ -184,7 +184,7 @@
                 </div>
             </div>
             <!-- Edit Admin Personal Info -->
-            <div class="col-10" style="padding: 7mm;;" *ngIf="edit && details">
+            <div class="col-9" style="padding: 7mm;;" *ngIf="edit && details">
                 <div class="row"
                     style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
                     <div class="col-12">
@@ -249,7 +249,7 @@
 
             <!-- Add a new User -->
 
-            <div class="col-10" style="padding: 7mm;;" *ngIf="usr">
+            <div class="col-9" style="padding: 7mm;;" *ngIf="usr">
                 <div class="row"
                     style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
                     <div class="col-12">
@@ -310,7 +310,7 @@
             </div>
 
             <!-- Add a new Promoter -->
-            <div class="col-10" style="padding: 7mm;" *ngIf="prom">
+            <div class="col-9" style="padding: 7mm;" *ngIf="prom">
                 <div class="row"
                     style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
                     <div class="col-12">
@@ -372,7 +372,7 @@
             </div>
 
             <!-- Add an event  -->
-            <div class="col-10" style="padding: 4mm;" *ngIf="evt">
+            <div class="col-9" style="padding: 4mm;" *ngIf="evt">
                 <div class="row"
                     style="background-color: rgb(250, 244, 244); border-radius: 2%; padding: 5mm;  padding-top: 10mm">
                     <div class="col-12">
